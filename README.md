@@ -1,7 +1,7 @@
 # Estudos em MySQL
 
-Este repositório contém scripts e exemplos práticos do meu aprendizado em **SQL** e **bancos de dados relacionais**.  
-O objetivo é documentar o processo de criação de tabelas, inserção de dados e consultas básicas no MySQL.
+Este repositório contém scripts e exemplos práticos do meu aprendizado em **SQL** e bancos de dados relacionais.  
+Aqui você verá criação de tabelas, inserção de dados, consultas básicas e visualização dos resultados.
 
 ---
 
@@ -10,9 +10,9 @@ O objetivo é documentar o processo de criação de tabelas, inserção de dados
 mysql-estudos/
 │
 ├── scripts/
-│ ├── create_table.sql # Criação da tabela pessoas
+│ ├── create_table.sql # Cria a tabela pessoas
 │ ├── insert_pessoas.sql # Inserções de exemplo
-│ └── select_pessoas.sql # Consultas de exemplo
+│ └── select_pessoas.sql # Consulta de exemplo
 │
 ├── imagens/
 │ ├── mysql_bruna.png # Print inserindo Bruna
@@ -21,15 +21,15 @@ mysql-estudos/
 └── README.md
 
 sql
-Copiar código
 
 ---
 
 ## Scripts SQL
 
 ### Criação da tabela
+
 ```sql
--- Cria a tabela pessoas com campos básicos
+-- Cria tabela `pessoas` com vários tipos de coluna para praticar
 create table pessoas (
     id int not null auto_increment,
     nome varchar(30) not null,
@@ -42,38 +42,27 @@ create table pessoas (
 ) default charset = utf8mb4;
 Inserções de exemplo
 sql
-Copiar código
--- Inserindo uma pessoa com todos os dados preenchidos
+
+-- Inserindo uma pessoa com todos os campos preenchidos
 insert into pessoas
 (id, nome, nascimento, sexo, peso, altura, nacionalidade)
 values
 (DEFAULT, 'Bruna', '2002-10-25', 'F', 54, 1.69, 'Brasil');
 
--- Inserindo pessoa com valor DEFAULT para nacionalidade
+-- Inserindo pessoa usando valor DEFAULT para nacionalidade
 insert into pessoas
+(nome, nascimento, sexo, peso, altura)
 values
-(DEFAULT, 'Pablo', '2023-07-20', 'M', 90, 1.50, DEFAULT);
+('Pablo', '2023-07-20', 'M', 90, 1.50);
 Consulta
 sql
-Copiar código
--- Consulta todos os registros da tabela
+
+-- Consulta todos os registros da tabela `pessoas`
 select * from pessoas;
 Exemplos visuais
-Inserção de Bruna
+<p align="center"> <img src="imagens/mysql_bruna.png" alt="Inserção de Bruna" width="400"/> </p> <p align="center"><em>Inserção de Bruna na tabela `pessoas`</em></p> <p align="center"> <img src="imagens/mysql_pablo.png" alt="Inserção de Pablo" width="400"/> </p> <p align="center"><em>Inserção de Pablo (com DEFAULT em nacionalidade)</em></p>
 
-Registro da Bruna adicionado na tabela pessoas
 
-Inserção de Pablo
+Normalização do banco: 1ª, 2ª, 3ª forma normal
 
-Registro do Pablo utilizando valor DEFAULT para nacionalidade
-
-Próximos passos
-Criar novas tabelas relacionadas (ex: endereços, cursos, pedidos)
-
-Estudar joins (INNER JOIN, LEFT JOIN, etc.)
-
-Implementar chaves estrangeiras (FK)
-
-Praticar normalização de banco de dados
-
-Inserir mais consultas com filtros, ordenação e agrupamentos
+Consultas mais complexas: filtros, ordenações, agrupamentos, funções agregadas
