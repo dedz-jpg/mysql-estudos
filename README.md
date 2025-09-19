@@ -26,6 +26,7 @@ insert into pessoas
 (id, nome, nascimento, sexo, peso, altura, nacionalidade)
 values
 (DEFAULT, 'Bruna', '2002-10-25', 'F', 54, 1.69, 'Brasil');
+![Exemplo de consulta](imagens/mysql_bruna.png)
 
 Objetivo
 
